@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI For Agents — The Best AI Tools for UK Estate Agents</title>
+  <meta name="description" content="The definitive directory of AI tools built for UK estate agents. Save hours every week on listings, marketing, lead gen, and admin." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #F5F0E8;
+      --dark: #1A1A18;
+      --green: #1E4D3A;
+      --green-light: #2D6B51;
+      --gold: #C9A84C;
+      --gold-light: #E2C47A;
+      --text: #2C2C2A;
+      --muted: #6B6B65;
+      --border: #DDD8CE;
+      --card-bg: #FDFAF4;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--dark);
+      border-bottom: 1px solid #2a2a28;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--gold);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #aaa;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    .nav-cta {
+      background: var(--gold);
+      color: var(--dark) !important;
+      padding: 0.4rem 1rem;
+      border-radius: 4px;
+      font-weight: 600 !important;
+    }
+
+    /* HERO */
+    .hero {
+      background: var(--dark);
+      padding: 6rem 2rem 5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(201,168,76,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: rgba(201,168,76,0.15);
+      border: 1px solid rgba(201,168,76,0.3);
+      color: var(--gold);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.35rem 1rem;
+      border-radius: 100px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.1;
+      max-width: 760px;
+      margin: 0 auto 1.5rem;
+      letter-spacing: -0.03em;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--gold);
+    }
+
+    .hero p {
+      color: #999;
+      font-size: 1.1rem;
+      max-width: 520px;
+      margin: 0 auto 2.5rem;
+      font-weight: 300;
+    }
+
+    .hero-search {
+      display: flex;
+      max-width: 520px;
+      margin: 0 auto 3rem;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid rgba(201,168,76,0.3);
+      background: rgba(255,255,255,0.05);
+    }
+
+    .hero-search input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      padding: 0.85rem 1.2rem;
+      color: #fff;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      outline: none;
+    }
+
+    .hero-search input::placeholder { color: #666; }
+
+    .hero-search button {
+      background: var(--gold);
+      border: none;
+      padding: 0 1.5rem;
+      color: var(--dark);
+      font-weight: 700;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .hero-search button:hover { background: var(--gold-light); }
+
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--gold);
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: #777;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-top: 0.1rem;
+    }
+
+    /* CATEGORIES NAV */
+    .categories-bar {
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      display: flex;
+      gap: 0;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .categories-bar::-webkit-scrollbar { display: none; }
+
+    .cat-btn {
+      flex-shrink: 0;
+      padding: 1rem 1.5rem;
+      border: none;
+      background: transparent;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--muted);
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .cat-btn:hover { color: var(--green); }
+    .cat-btn.active { color: var(--green); border-bottom-color: var(--green); font-weight: 600; }
+
+    /* MAIN LAYOUT */
+    .main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 2rem 5rem;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--dark);
+    }
+
+    .section-count {
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    /* TOOL GRID */
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 3rem;
+    }
+
+    .tool-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.5rem;
+      transition: all 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tool-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--green);
+      transform: scaleX(0);
+      transition: transform 0.2s;
+      transform-origin: left;
+    }
+
+    .tool-card:hover {
+      border-color: var(--green);
+      box-shadow: 0 4px 24px rgba(30,77,58,0.08);
+      transform: translateY(-2px);
+    }
+
+    .tool-card:hover::before { transform: scaleX(1); }
+
+    .tool-card.featured {
+      border-color: var(--gold);
+      background: linear-gradient(135deg, #FDFAF4 0%, #FDF6E3 100%);
+    }
+
+    .tool-card.featured::before { background: var(--gold); }
+
+    .featured-badge {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: var(--gold);
+      color: var(--dark);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.6rem;
+      border-radius: 100px;
+    }
+
+    .tool-header {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+    }
+
+    .tool-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+
+    .tool-name {
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--dark);
+      line-height: 1.2;
+    }
+
+    .tool-category-tag {
+      font-size: 0.7rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 500;
+    }
+
+    .tool-desc {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .tool-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: auto;
+      padding-top: 0.5rem;
+    }
+
+    .tool-price {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--green);
+    }
+
+    .tool-rating {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .stars { color: var(--gold); letter-spacing: -1px; }
+
+    .tool-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .tag {
+      background: rgba(30,77,58,0.08);
+      color: var(--green);
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      letter-spacing: 0.02em;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background: var(--green);
+      color: #fff;
+      text-decoration: none;
+      padding: 0.5rem 1.1rem;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+
+    .cta-btn:hover { background: var(--green-light); }
+
+    /* UK NOTE */
+    .uk-note {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-top: 0.25rem;
+    }
+
+    .uk-flag { font-size: 0.9rem; }
+
+    /* NEWSLETTER STRIP */
+    .newsletter {
+      background: var(--dark);
+      border-radius: 12px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      margin: 2rem 0 3rem;
+    }
+
+    .newsletter h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+
+    .newsletter p {
+      color: #999;
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .newsletter-form {
+      display: flex;
+      max-width: 420px;
+      margin: 0 auto;
+      gap: 0.5rem;
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      padding: 0.7rem 1rem;
+      border-radius: 6px;
+      border: 1px solid #333;
+      background: #222;
+      color: #fff;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      outline: none;
+    }
+
+    .newsletter-form input:focus { border-color: var(--gold); }
+
+    .newsletter-form button {
+      background: var(--gold);
+      color: var(--dark);
+      border: none;
+      padding: 0.7rem 1.2rem;
+      border-radius: 6px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: 0.88rem;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    /* SUBMIT BANNER */
+    .submit-banner {
+      background: rgba(30,77,58,0.06);
+      border: 1px solid rgba(30,77,58,0.15);
+      border-radius: 10px;
+      padding: 1.5rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .submit-banner p {
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+
+    .submit-banner strong { color: var(--green); }
+
+    .submit-btn {
+      background: var(--green);
+      color: #fff;
+      border: none;
+      padding: 0.6rem 1.4rem;
+      border-radius: 6px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      font-size: 0.88rem;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.2s;
+    }
+
+    .submit-btn:hover { background: var(--green-light); }
+
+    /* FOOTER */
+    footer {
+      background: var(--dark);
+      color: #666;
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.82rem;
+    }
+
+    footer a { color: #888; text-decoration: none; }
+    footer a:hover { color: var(--gold); }
+
+    .footer-links { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 0.75rem; }
+
+    /* MODAL */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s;
+    }
+
+    .modal-overlay.open { opacity: 1; pointer-events: all; }
+
+    .modal {
+      background: var(--card-bg);
+      border-radius: 14px;
+      padding: 2rem;
+      max-width: 520px;
+      width: 100%;
+      position: relative;
+      transform: translateY(20px);
+      transition: transform 0.2s;
+    }
+
+    .modal-overlay.open .modal { transform: translateY(0); }
+
+    .modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: none;
+      border: none;
+      font-size: 1.3rem;
+      color: var(--muted);
+      cursor: pointer;
+    }
+
+    .modal h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .modal-category {
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1rem;
+    }
+
+    .modal-desc { font-size: 0.92rem; color: var(--muted); line-height: 1.65; margin-bottom: 1.2rem; }
+
+    .modal-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .meta-item { background: #f0ece3; border-radius: 8px; padding: 0.75rem; }
+    .meta-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 0.2rem; }
+    .meta-value { font-size: 0.9rem; font-weight: 600; color: var(--dark); }
+
+    .modal-cta {
+      display: block;
+      text-align: center;
+      background: var(--green);
+      color: #fff;
+      text-decoration: none;
+      padding: 0.85rem;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: background 0.2s;
+    }
+
+    .modal-cta:hover { background: var(--green-light); }
+
+    .modal-affiliate { text-align: center; font-size: 0.7rem; color: var(--muted); margin-top: 0.5rem; }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .tool-card {
+      animation: fadeUp 0.4s ease both;
+    }
+
+    .tool-card:nth-child(1) { animation-delay: 0.05s; }
+    .tool-card:nth-child(2) { animation-delay: 0.1s; }
+    .tool-card:nth-child(3) { animation-delay: 0.15s; }
+    .tool-card:nth-child(4) { animation-delay: 0.2s; }
+    .tool-card:nth-child(5) { animation-delay: 0.25s; }
+    .tool-card:nth-child(6) { animation-delay: 0.3s; }
+
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .hero { padding: 4rem 1.5rem 3rem; }
+      .hero-stats { gap: 1.5rem; }
+      .tools-grid { grid-template-columns: 1fr; }
+      .newsletter-form { flex-direction: column; }
+      .submit-banner { flex-direction: column; text-align: center; }
+      .modal-meta { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">AI For Agents</a>
+  <ul class="nav-links">
+    <li><a href="#tools">Tools</a></li>
+    <li><a href="#newsletter">Newsletter</a></li>
+    <li><a href="#submit" class="nav-cta">Submit a Tool</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-tag">🇬🇧 Built for UK Estate Agents</div>
+  <h1>Find the <em>Right AI Tool</em> for Your Agency</h1>
+  <p>Stop wasting hours on listings, marketing, and admin. Every tool here is handpicked and reviewed for UK estate agents.</p>
+
+  <div class="hero-search">
+    <input type="text" id="searchInput" placeholder="Search tools, e.g. 'virtual staging' or 'listing descriptions'..." oninput="filterTools()" />
+    <button onclick="filterTools()">Search</button>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-num" id="toolCount">24</div>
+      <div class="stat-label">Tools Listed</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">8</div>
+      <div class="stat-label">Categories</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">48%</div>
+      <div class="stat-label">of UK Agents Using AI</div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORY BAR -->
+<div class="categories-bar" id="categoryBar">
+  <button class="cat-btn active" onclick="setCategory('all', this)">All Tools</button>
+  <button class="cat-btn" onclick="setCategory('listing', this)">📝 Listing Descriptions</button>
+  <button class="cat-btn" onclick="setCategory('staging', this)">🏠 Virtual Staging</button>
+  <button class="cat-btn" onclick="setCategory('leads', this)">📞 Lead Generation</button>
+  <button class="cat-btn" onclick="setCategory('social', this)">📱 Social & Marketing</button>
+  <button class="cat-btn" onclick="setCategory('chatbot', this)">🤖 Chatbots & Enquiries</button>
+  <button class="cat-btn" onclick="setCategory('crm', this)">⚙️ CRM & Automation</button>
+  <button class="cat-btn" onclick="setCategory('valuation', this)">📊 Valuations & Analytics</button>
+  <button class="cat-btn" onclick="setCategory('documents', this)">📄 Documents</button>
+</div>
+
+<!-- MAIN -->
+<main class="main">
+
+  <div class="section-header">
+    <h2 class="section-title" id="sectionTitle">All Tools</h2>
+    <span class="section-count" id="sectionCount">24 tools</span>
+  </div>
+
+  <div class="tools-grid" id="toolsGrid"></div>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter" id="newsletter">
+    <h2>The Weekly AI Briefing for Agents</h2>
+    <p>New tools, tips, and time-savers — straight to your inbox every Tuesday. No fluff, just what works.</p>
+    <div class="newsletter-form">
+      <input type="email" placeholder="your@email.com" id="emailInput" />
+      <button onclick="subscribeNewsletter()">Subscribe Free</button>
+    </div>
+  </section>
+
+  <!-- SUBMIT BANNER -->
+  <div class="submit-banner" id="submit">
+    <div>
+      <p><strong>Built a tool for estate agents?</strong></p>
+      <p>Get listed and reach thousands of UK agents looking for solutions like yours.</p>
+    </div>
+    <button class="submit-btn" onclick="openSubmit()">Submit Your Tool →</button>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-links">
+    <a href="#">About</a>
+    <a href="#">Advertise</a>
+    <a href="#">Submit a Tool</a>
+    <a href="#">Newsletter</a>
+  </div>
+  <p>© 2025 AI For Agents · Made in London · <a href="#">Affiliate Disclosure</a></p>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+  <div class="modal" id="modal">
+    <button class="modal-close" onclick="closeModalBtn()">✕</button>
+    <div class="tool-icon" id="modalIcon" style="margin-bottom:0.75rem;"></div>
+    <h3 id="modalName"></h3>
+    <p class="modal-category" id="modalCat"></p>
+    <p class="modal-desc" id="modalDesc"></p>
+    <div class="modal-meta">
+      <div class="meta-item">
+        <div class="meta-label">Price</div>
+        <div class="meta-value" id="modalPrice"></div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Best For</div>
+        <div class="meta-value" id="modalBestFor"></div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Rating</div>
+        <div class="meta-value" id="modalRating"></div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">UK GDPR Compliant</div>
+        <div class="meta-value" id="modalGdpr"></div>
+      </div>
+    </div>
+    <a href="#" id="modalCta" class="modal-cta" target="_blank" rel="noopener noreferrer">Try Free →</a>
+    <p class="modal-affiliate">🔗 Affiliate link — we may earn a commission at no cost to you</p>
+  </div>
+</div>
+
+<script>
+const tools = [
+  // LISTING DESCRIPTIONS
+  {
+    id: 1,
+    name: "Listing AI",
+    icon: "✍️",
+    iconBg: "#E8F5EE",
+    category: "listing",
+    categoryLabel: "Listing Descriptions",
+    desc: "All-in-one platform for property descriptions, virtual staging, CMAs, and social posts. Used by 31,000+ agents across 20+ countries.",
+    price: "Free trial, from ~£25/mo",
+    bestFor: "Busy solo agents",
+    rating: 4.8,
+    gdpr: "✅ Yes",
+    tags: ["Descriptions", "Staging", "CMAs"],
+    featured: true,
+    ukNote: "Popular with UK agents, GDPR compliant",
+    url: "https://listingai.co"
+  },
+  {
+    id: 2,
+    name: "Saleswise",
+    icon: "📋",
+    iconBg: "#EEF2FF",
+    category: "listing",
+    categoryLabel: "Listing Descriptions",
+    desc: "40+ specialised real-estate tools — listing descriptions, CMA reports, email campaigns, phone scripts, and social posts, all with live market data.",
+    price: "From £30/mo",
+    bestFor: "Agent teams & brokers",
+    rating: 4.6,
+    gdpr: "⚠️ Check TOS",
+    tags: ["Descriptions", "CMAs", "Email"],
+    featured: false,
+    ukNote: "US-focused but works well for UK copy",
+    url: "https://saleswise.ai"
+  },
+  {
+    id: 3,
+    name: "Copy.ai",
+    icon: "🖊️",
+    iconBg: "#FFF3E0",
+    category: "listing",
+    categoryLabel: "Listing Descriptions",
+    desc: "General-purpose AI writer with excellent real estate templates. Write property descriptions, email sequences, and social captions in seconds.",
+    price: "Free plan, Pro from £30/mo",
+    bestFor: "Agents wanting flexibility",
+    rating: 4.4,
+    gdpr: "✅ Yes",
+    tags: ["Descriptions", "Email", "Social"],
+    featured: false,
+    ukNote: "Works well for UK English tone",
+    url: "https://copy.ai"
+  },
+
+  // VIRTUAL STAGING
+  {
+    id: 4,
+    name: "Virtual Staging AI",
+    icon: "🛋️",
+    iconBg: "#FCE4EC",
+    category: "staging",
+    categoryLabel: "Virtual Staging",
+    desc: "Stage empty rooms in under 30 seconds. Choose from 15+ styles including Scandinavian, mid-century, and luxury. 3 free images to start.",
+    price: "Pay-per-image from ~£0.80",
+    bestFor: "Empty or vacant listings",
+    rating: 4.7,
+    gdpr: "✅ Yes",
+    tags: ["Staging", "Photography", "Listings"],
+    featured: true,
+    ukNote: "MLS & Rightmove compliant disclosures",
+    url: "https://virtualstagingai.app"
+  },
+  {
+    id: 5,
+    name: "REimagineHome",
+    icon: "🏡",
+    iconBg: "#E8F5EE",
+    category: "staging",
+    categoryLabel: "Virtual Staging",
+    desc: "Transform listing photos with virtual staging, renovation previews, and decluttering. Upload a photo and get multiple design options instantly.",
+    price: "Credits from £15/pack",
+    bestFor: "Renovation & flip properties",
+    rating: 4.5,
+    gdpr: "⚠️ Check TOS",
+    tags: ["Staging", "Renovation", "Photos"],
+    featured: false,
+    ukNote: "US-based, works for UK properties",
+    url: "https://reimaginehome.ai"
+  },
+  {
+    id: 6,
+    name: "AI HomeDesign",
+    icon: "🎨",
+    iconBg: "#E3F2FD",
+    category: "staging",
+    categoryLabel: "Virtual Staging",
+    desc: "Professional virtual staging in 30 seconds, from £0.24 per image with unlimited regenerations. One of the cheapest options on the market.",
+    price: "From £0.24/image",
+    bestFor: "High-volume agents",
+    rating: 4.6,
+    gdpr: "✅ Yes",
+    tags: ["Staging", "Budget-friendly"],
+    featured: false,
+    ukNote: "API access available for agencies",
+    url: "https://aihomedesign.com"
+  },
+
+  // LEAD GENERATION
+  {
+    id: 7,
+    name: "Zoopla AI Insights",
+    icon: "📊",
+    iconBg: "#FFF3E0",
+    category: "leads",
+    categoryLabel: "Lead Generation",
+    desc: "AI-powered valuation and market data tools built into Zoopla's agent platform. Identify likely movers in your patch before they list.",
+    price: "Included with Zoopla Pro",
+    bestFor: "UK agents on Zoopla",
+    rating: 4.3,
+    gdpr: "✅ Yes",
+    tags: ["Leads", "Valuations", "UK"],
+    featured: false,
+    ukNote: "Native UK integration",
+    url: "https://zoopla.co.uk"
+  },
+  {
+    id: 8,
+    name: "Structurely",
+    icon: "🤝",
+    iconBg: "#E8F5EE",
+    category: "leads",
+    categoryLabel: "Lead Generation",
+    desc: "AI that instantly responds to new enquiries 24/7, qualifies leads, and books viewings into your diary — all via SMS and email.",
+    price: "From ~£80/mo",
+    bestFor: "Busy agents missing leads",
+    rating: 4.4,
+    gdpr: "⚠️ Check TOS",
+    tags: ["Leads", "Follow-up", "Automation"],
+    featured: false,
+    ukNote: "Primarily US, UK agents using it",
+    url: "https://structurely.com"
+  },
+  {
+    id: 9,
+    name: "Likely.AI",
+    icon: "🎯",
+    iconBg: "#FCE4EC",
+    category: "leads",
+    categoryLabel: "Lead Generation",
+    desc: "Predicts which homeowners in your area are most likely to sell in the next 12 months, so you can focus your canvassing where it counts.",
+    price: "Contact for pricing",
+    bestFor: "Prospecting & canvassing",
+    rating: 4.2,
+    gdpr: "⚠️ Check TOS",
+    tags: ["Leads", "Prospecting", "Data"],
+    featured: false,
+    ukNote: "US data model, verify UK availability",
+    url: "https://likely.ai"
+  },
+
+  // SOCIAL & MARKETING
+  {
+    id: 10,
+    name: "Canva AI",
+    icon: "🎨",
+    iconBg: "#E3F2FD",
+    category: "social",
+    categoryLabel: "Social & Marketing",
+    desc: "Design stunning property marketing materials — social posts, brochures, flyers, and videos — with AI-assisted templates built for estate agents.",
+    price: "Free plan, Pro from £10/mo",
+    bestFor: "All agents",
+    rating: 4.8,
+    gdpr: "✅ Yes",
+    tags: ["Social", "Design", "Video"],
+    featured: true,
+    ukNote: "Trusted by thousands of UK agents",
+    url: "https://canva.com"
+  },
+  {
+    id: 11,
+    name: "Hootsuite AI",
+    icon: "📅",
+    iconBg: "#E8F5EE",
+    category: "social",
+    categoryLabel: "Social & Marketing",
+    desc: "AI-powered social media scheduling with caption writing, best-time suggestions, and performance analytics across Instagram, LinkedIn, and Facebook.",
+    price: "From £39/mo",
+    bestFor: "Agents posting regularly",
+    rating: 4.3,
+    gdpr: "✅ Yes",
+    tags: ["Scheduling", "Social", "Analytics"],
+    featured: false,
+    ukNote: "Widely used across UK businesses",
+    url: "https://hootsuite.com"
+  },
+  {
+    id: 12,
+    name: "Predis.ai",
+    icon: "📸",
+    iconBg: "#FFF3E0",
+    category: "social",
+    categoryLabel: "Social & Marketing",
+    desc: "Generate a week of social media content for your listings in minutes. Paste your property URL and it creates ready-to-post reels, carousels, and captions.",
+    price: "Free plan, Solo from £22/mo",
+    bestFor: "Instagram & LinkedIn agents",
+    rating: 4.4,
+    gdpr: "✅ Yes",
+    tags: ["Social", "Reels", "Content"],
+    featured: false,
+    ukNote: "Works with Rightmove & Zoopla URLs",
+    url: "https://predis.ai"
+  },
+
+  // CHATBOTS
+  {
+    id: 13,
+    name: "Tidio",
+    icon: "💬",
+    iconBg: "#E8F5EE",
+    category: "chatbot",
+    categoryLabel: "Chatbots & Enquiries",
+    desc: "AI chatbot for your agency website. Answers enquiries 24/7, qualifies buyers and sellers, and sends leads straight to your CRM.",
+    price: "Free plan, Starter from £19/mo",
+    bestFor: "Agencies with a website",
+    rating: 4.5,
+    gdpr: "✅ Yes",
+    tags: ["Chatbot", "Website", "Leads"],
+    featured: false,
+    ukNote: "GDPR compliant, EU servers",
+    url: "https://tidio.com"
+  },
+  {
+    id: 14,
+    name: "Intercom",
+    icon: "🔔",
+    iconBg: "#E3F2FD",
+    category: "chatbot",
+    categoryLabel: "Chatbots & Enquiries",
+    desc: "Enterprise-grade AI customer support for larger agencies. Handles hundreds of simultaneous enquiries and escalates complex queries to your team.",
+    price: "From £70/mo",
+    bestFor: "Multi-branch agencies",
+    rating: 4.6,
+    gdpr: "✅ Yes",
+    tags: ["Chatbot", "Support", "Enterprise"],
+    featured: false,
+    ukNote: "Full GDPR & ICO compliance",
+    url: "https://intercom.com"
+  },
+  {
+    id: 15,
+    name: "ManyChat",
+    icon: "📨",
+    iconBg: "#FCE4EC",
+    category: "chatbot",
+    categoryLabel: "Chatbots & Enquiries",
+    desc: "Automate Instagram DM replies for your agency account. When someone comments on your listing post, instantly send them full property details.",
+    price: "Free plan, Pro from £12/mo",
+    bestFor: "Instagram-active agents",
+    rating: 4.3,
+    gdpr: "✅ Yes",
+    tags: ["Instagram", "DMs", "Automation"],
+    featured: false,
+    ukNote: "Compliant with Meta & UK GDPR",
+    url: "https://manychat.com"
+  },
+
+  // CRM & AUTOMATION
+  {
+    id: 16,
+    name: "Alto CRM (AI)",
+    icon: "⚙️",
+    iconBg: "#E8F5EE",
+    category: "crm",
+    categoryLabel: "CRM & Automation",
+    desc: "The UK's leading estate agency CRM now with built-in AI features — automatic follow-up emails, property matching, and compliance tracking.",
+    price: "Contact for pricing",
+    bestFor: "UK agencies needing compliance",
+    rating: 4.5,
+    gdpr: "✅ Yes",
+    tags: ["CRM", "UK", "Compliance"],
+    featured: true,
+    ukNote: "Built specifically for UK agencies",
+    url: "https://altosoftware.co.uk"
+  },
+  {
+    id: 17,
+    name: "Zapier AI",
+    icon: "⚡",
+    iconBg: "#FFF3E0",
+    category: "crm",
+    categoryLabel: "CRM & Automation",
+    desc: "Connect all your agency tools together with AI-powered automation. Auto-send property details from Rightmove enquiries, update your CRM, and more.",
+    price: "Free plan, Starter from £16/mo",
+    bestFor: "Tech-savvy agents",
+    rating: 4.6,
+    gdpr: "✅ Yes",
+    tags: ["Automation", "Integrations", "No-code"],
+    featured: false,
+    ukNote: "Works with Rightmove, Zoopla APIs",
+    url: "https://zapier.com"
+  },
+  {
+    id: 18,
+    name: "n8n",
+    icon: "🔗",
+    iconBg: "#E3F2FD",
+    category: "crm",
+    categoryLabel: "CRM & Automation",
+    desc: "Open-source automation for agencies that want full control. Self-host on your own server, connect to any tool, and build custom AI workflows.",
+    price: "Free (self-hosted) or from £17/mo",
+    bestFor: "Agencies wanting full control",
+    rating: 4.4,
+    gdpr: "✅ Yes (self-hosted)",
+    tags: ["Automation", "Open-source", "GDPR"],
+    featured: false,
+    ukNote: "Self-host for maximum GDPR control",
+    url: "https://n8n.io"
+  },
+
+  // VALUATIONS
+  {
+    id: 19,
+    name: "ProVal",
+    icon: "📈",
+    iconBg: "#E8F5EE",
+    category: "valuation",
+    categoryLabel: "Valuations & Analytics",
+    desc: "AI-powered comparable analysis tool for UK estate agents. Pull sold prices, active comps, and auto-generate a client-ready CMA report in minutes.",
+    price: "From £45/mo",
+    bestFor: "Valuation-heavy agents",
+    rating: 4.3,
+    gdpr: "✅ Yes",
+    tags: ["Valuations", "CMAs", "UK"],
+    featured: false,
+    ukNote: "Land Registry data integrated",
+    url: "https://proval.ai"
+  },
+  {
+    id: 20,
+    name: "Hometrack",
+    icon: "🏘️",
+    iconBg: "#FCE4EC",
+    category: "valuation",
+    categoryLabel: "Valuations & Analytics",
+    desc: "Institutional-grade UK property analytics used by lenders and large agencies. AI-driven AVM (automated valuation model) with postcode-level accuracy.",
+    price: "Enterprise pricing",
+    bestFor: "Large agencies & brokers",
+    rating: 4.5,
+    gdpr: "✅ Yes",
+    tags: ["Valuations", "Data", "Enterprise"],
+    featured: false,
+    ukNote: "UK's most accurate AVM data",
+    url: "https://hometrack.com"
+  },
+
+  // DOCUMENTS
+  {
+    id: 21,
+    name: "Otter.ai",
+    icon: "🎙️",
+    iconBg: "#E8F5EE",
+    category: "documents",
+    categoryLabel: "Documents",
+    desc: "Record and transcribe property viewings, client meetings, and phone calls. AI automatically summarises key points and action items.",
+    price: "Free plan, Pro from £8/mo",
+    bestFor: "All agents",
+    rating: 4.6,
+    gdpr: "✅ Yes",
+    tags: ["Transcription", "Meetings", "Notes"],
+    featured: false,
+    ukNote: "GDPR: notify clients before recording",
+    url: "https://otter.ai"
+  },
+  {
+    id: 22,
+    name: "Docusign AI",
+    icon: "✒️",
+    iconBg: "#E3F2FD",
+    category: "documents",
+    categoryLabel: "Documents",
+    desc: "AI-powered e-signatures and contract management for estate agents. Automatically extract key terms from contracts and flag issues before you sign.",
+    price: "From £9/mo",
+    bestFor: "Agents processing lots of paperwork",
+    rating: 4.7,
+    gdpr: "✅ Yes",
+    tags: ["E-signatures", "Contracts", "Legal"],
+    featured: false,
+    ukNote: "Legally valid in England & Wales",
+    url: "https://docusign.com"
+  },
+  {
+    id: 23,
+    name: "ChatGPT (GPT-4)",
+    icon: "🧠",
+    iconBg: "#FFF3E0",
+    category: "listing",
+    categoryLabel: "Listing Descriptions",
+    desc: "The Swiss Army knife for estate agents. Write descriptions, draft emails, answer client FAQs, summarise documents, and create social content.",
+    price: "Free (GPT-3.5), Plus from £16/mo",
+    bestFor: "Agents new to AI",
+    rating: 4.7,
+    gdpr: "⚠️ Don't input client data",
+    tags: ["Multipurpose", "Writing", "Support"],
+    featured: false,
+    ukNote: "Don't input personal client data",
+    url: "https://chat.openai.com"
+  },
+  {
+    id: 24,
+    name: "GetFloorPlan",
+    icon: "📐",
+    iconBg: "#E8F5EE",
+    category: "documents",
+    categoryLabel: "Documents",
+    desc: "Submit a hand-drawn sketch or existing floor plan and receive professional 2D/3D floor plans and 360° virtual tours within 24 hours.",
+    price: "From £15/plan",
+    bestFor: "Agents needing floorplans fast",
+    rating: 4.4,
+    gdpr: "✅ Yes",
+    tags: ["Floorplans", "3D", "Virtual Tours"],
+    featured: false,
+    ukNote: "Works to UK measurement standards",
+    url: "https://getfloorplan.com"
+  }
+];
+
+let currentCategory = 'all';
+
+function renderTools(filteredTools) {
+  const grid = document.getElementById('toolsGrid');
+  grid.innerHTML = '';
+
+  if (filteredTools.length === 0) {
+    grid.innerHTML = '<p style="color:var(--muted);grid-column:1/-1;text-align:center;padding:3rem;">No tools found. Try a different search.</p>';
+    return;
+  }
+
+  filteredTools.forEach((tool, i) => {
+    const stars = '★'.repeat(Math.round(tool.rating)) + '☆'.repeat(5 - Math.round(tool.rating));
+    const card = document.createElement('div');
+    card.className = 'tool-card' + (tool.featured ? ' featured' : '');
+    card.style.animationDelay = (i * 0.05) + 's';
+    card.onclick = () => openModal(tool);
+    card.innerHTML = `
+      ${tool.featured ? '<div class="featured-badge">⭐ Featured</div>' : ''}
+      <div class="tool-header">
+        <div class="tool-icon" style="background:${tool.iconBg}">${tool.icon}</div>
+        <div>
+          <div class="tool-name">${tool.name}</div>
+          <div class="tool-category-tag">${tool.categoryLabel}</div>
+        </div>
+      </div>
+      <p class="tool-desc">${tool.desc}</p>
+      <div class="tool-tags">${tool.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
+      <div class="uk-note"><span class="uk-flag">🇬🇧</span><span>${tool.ukNote}</span></div>
+      <div class="tool-footer">
+        <div>
+          <div class="tool-price">${tool.price}</div>
+          <div class="tool-rating"><span class="stars">${stars}</span> ${tool.rating}</div>
+        </div>
+        <a href="${tool.url}" class="cta-btn" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">Try Free →</a>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+
+  document.getElementById('toolCount').textContent = tools.length;
+  document.getElementById('sectionCount').textContent = filteredTools.length + ' tools';
+}
+
+function setCategory(cat, btn) {
+  currentCategory = cat;
+  document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  const labels = {
+    all: 'All Tools',
+    listing: '📝 Listing Descriptions',
+    staging: '🏠 Virtual Staging',
+    leads: '📞 Lead Generation',
+    social: '📱 Social & Marketing',
+    chatbot: '🤖 Chatbots & Enquiries',
+    crm: '⚙️ CRM & Automation',
+    valuation: '📊 Valuations & Analytics',
+    documents: '📄 Documents'
+  };
+
+  document.getElementById('sectionTitle').textContent = labels[cat] || 'All Tools';
+  applyFilters();
+}
+
+function filterTools() {
+  applyFilters();
+}
+
+function applyFilters() {
+  const q = document.getElementById('searchInput').value.toLowerCase();
+  let filtered = tools;
+
+  if (currentCategory !== 'all') {
+    filtered = filtered.filter(t => t.category === currentCategory);
+  }
+
+  if (q) {
+    filtered = filtered.filter(t =>
+      t.name.toLowerCase().includes(q) ||
+      t.desc.toLowerCase().includes(q) ||
+      t.tags.some(tag => tag.toLowerCase().includes(q)) ||
+      t.categoryLabel.toLowerCase().includes(q)
+    );
+  }
+
+  // Featured first
+  filtered.sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0));
+  renderTools(filtered);
+}
+
+function openModal(tool) {
+  const stars = '★'.repeat(Math.round(tool.rating)) + '☆'.repeat(5 - Math.round(tool.rating));
+  document.getElementById('modalIcon').textContent = tool.icon;
+  document.getElementById('modalIcon').style.background = tool.iconBg;
+  document.getElementById('modalName').textContent = tool.name;
+  document.getElementById('modalCat').textContent = tool.categoryLabel;
+  document.getElementById('modalDesc').textContent = tool.desc;
+  document.getElementById('modalPrice').textContent = tool.price;
+  document.getElementById('modalBestFor').textContent = tool.bestFor;
+  document.getElementById('modalRating').textContent = stars + ' ' + tool.rating;
+  document.getElementById('modalGdpr').textContent = tool.gdpr;
+  document.getElementById('modalCta').href = tool.url;
+  document.getElementById('modalCta').textContent = 'Try ' + tool.name + ' Free →';
+  document.getElementById('modalOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal(e) {
+  if (e.target === document.getElementById('modalOverlay')) closeModalBtn();
+}
+
+function closeModalBtn() {
+  document.getElementById('modalOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function subscribeNewsletter() {
+  const email = document.getElementById('emailInput').value;
+  if (!email || !email.includes('@')) {
+    alert('Please enter a valid email address.');
+    return;
+  }
+  document.getElementById('emailInput').value = '';
+  alert('You\'re in! 🎉 First issue lands Tuesday.');
+}
+
+function openSubmit() {
+  alert('Thanks for your interest! Email hello@aiforagents.co.uk to get listed. Featured spots from £99/month.');
+}
+
+// Init
+applyFilters();
+</script>
+</body>
+</html>
